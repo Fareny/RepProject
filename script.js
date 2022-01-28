@@ -1,7 +1,7 @@
 let title = "RepProject";
 let screens = ("Простые, Сложные, Интерактивные");
 let screenPrice = 300;
-let rollback = "50";
+let rollback = 50;
 let fullPrice = 999999;
 let adaptive = true;
 
