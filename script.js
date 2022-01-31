@@ -1,9 +1,9 @@
-let title;
-let screens;
-let screenPrice;
-let rollback = 50;
-let fullPrice;
-let adaptive;
+let title,
+    screens,
+    screenPrice,
+    rollback = 50,
+    fullPrice,
+    adaptive;
 
 title = prompt('Как называется ваш проект?');
 screens = prompt('Какие типы экранов нужно разработать? (Простые, Сложные, Интерактивные)');
