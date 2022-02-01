@@ -1,22 +1,16 @@
-let title,
-    screens,
-    screenPrice,
-    rollback = 50,
-    fullPrice,
-    adaptive;
-
-title = prompt('Как называется ваш проект?');
-screens = prompt('Какие типы экранов нужно разработать? (Простые, Сложные, Интерактивные)');
-screenPrice = prompt('Сколько будет стоить данная работа? (рублей)');
+let rollback = 50;
+let title = prompt('Как называется ваш проект?');
+let screens = prompt('Какие типы экранов нужно разработать? (Простые, Сложные, Интерактивные)');
+let screenPrice = prompt('Сколько будет стоить данная работа? (рублей)');
 parseInt(screenPrice);
-adaptive = confirm('Нужен ли адаптив на сайте?');
+let adaptive = confirm('Нужен ли адаптив на сайте?');
 console.log(adaptive);
 
 let service1 = prompt('Какой дополнительный тип услуги нужен?'),
     servicePrice1 = prompt('Сколько это будет стоить? (рублей)'),
     service2 = prompt('Какой дополнительный тип услуги нужен?'),
     servicePrice2 = prompt('Сколько это будет стоить? (рублей)');
-fullPrice = parseInt(screenPrice) + parseInt(servicePrice2) + parseInt(servicePrice2);
+let fullPrice = parseInt(screenPrice) + parseInt(servicePrice2) + parseInt(servicePrice2);
 
 console.log(typeof title);
 console.log(typeof fullPrice);
