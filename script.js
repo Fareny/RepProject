@@ -44,26 +44,26 @@ const getRollbackMessage = function (price) {
     }
 };
 
-
-const getServicePercentPrices = function (full, roll) {
-    servicePercentPrice = full - roll;
+const getServicePercentPrices = function () {
+    return fullPrice - (fullPrice * (rollback / 100));
 };
-getServicePercentPrices(fullPrice, rollback);
+servicePercentPrice = getServicePercentPrices();
 
 const showTypeOf = function (variable) {
     console.log(variable, typeof variable);
 };
 
-rollback = parseInt(fullPrice) * (rollback / 100);
-
 
 showTypeOf(title);
-showTypeOf(fullPrice);
+showTypeOf(screenPrice);
 showTypeOf(adaptive);
 
 console.log(getRollbackMessage(fullPrice));
+console.log(typeof title);
+console.log(typeof screenPrice);
+console.log(typeof adaptive);
+console.log(screens.length);
+console.log(servicePercentPrice);
+
 console.log('Стоимость верстки экранов ' + screenPrice + ' рублей');
 console.log('Стоимость разработки сайта ' + fullPrice + ' рублей');
-console.log(screens.toLowerCase().split(", "));
-console.log('Процент отката посреднику за работу - ' + rollback + ' рублей');
-console.log(Math.ceil(servicePercentPrice));
