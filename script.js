@@ -35,9 +35,10 @@ const getAllServicePrices = function () {
         } else if (i === 1) {
             service2 = prompt('Какой дополнительный тип услуги нужен?');
         }
-        // do {
-        //     sum = +prompt('Сколько это будет стоить? (рублей)');
-        // } while (!isNumber(sum));
+        do {
+            res = prompt('Сколько это будет стоить? (рублей)');
+        } while (!isNumber(res));
+        sum += +res;
     }
     return sum;
 };
