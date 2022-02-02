@@ -38,7 +38,6 @@ const getAllServicePrices = function () {
         // do {
         //     sum = +prompt('Сколько это будет стоить? (рублей)');
         // } while (!isNumber(sum));
-
     }
     return sum;
 };
