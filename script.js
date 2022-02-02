@@ -1,36 +1,52 @@
+let title;
+let screens;
+let screenPrice;
+let adaptive;
 let rollback = 50;
-let title = prompt('Как называется ваш проект?');
-let screens = prompt('Какие типы экранов нужно разработать? (Простые, Сложные, Интерактивные)');
-let screenPrice = +prompt('Сколько будет стоить данная работа? (рублей)');
-let adaptive = confirm('Нужен ли адаптив на сайте?');
-let service1 = prompt('Какой дополнительный тип услуги нужен?');
-let servicePrice1 = +prompt('Сколько это будет стоить? (рублей)');
-let service2 = prompt('Какой дополнительный тип услуги нужен?');
-let servicePrice2 = +prompt('Сколько это будет стоить? (рублей)');
+let service1;
+let service2;
 let fullPrice;
 let servicePercentPrice;
 let allServicePrices;
 
-
-const getAllServicePrices = function (service1, service2) {
-    allServicePrices = service1 + service2;
+const isNumber = function (num) {
+    return !isNaN(parseFloat(num) && isFinite(num));
 };
-getAllServicePrices(servicePrice1, servicePrice2);
 
 
-function getFullPrice(screen, allService) {
-    fullPrice = screen + allService;
-}
-getFullPrice(screenPrice, allServicePrices);
+const asking = function () {
+    title = prompt('Как называется ваш проект?');
+    screens = prompt('Какие типы экранов нужно разработать? (Простые, Сложные, Интерактивные)');
 
+    do {
+        screenPrice = prompt('Сколько будет стоить данная работа? (рублей)');
+    } while (!isNumber(screenPrice));
 
-const getTitle = function (getTitle) {
-    let title1 = getTitle.trim().charAt(0).toUpperCase();
-    let title2 = getTitle.trim().substring(1, getTitle.length).toLowerCase();
-    title = title1 + title2;
+    adaptive = confirm('Нужен ли адаптив на сайте?');
 };
-getTitle(title);
 
+
+const getAllServicePrices = function () {
+    let sum = 0;
+    let res = 0;
+    for (let i = 0; i < 2; i++) {
+        if (i === 0) {
+            service1 = prompt('Какой дополнительный тип услуги нужен?');
+        } else if (i === 1) {
+            service2 = prompt('Какой дополнительный тип услуги нужен?');
+        }
+        // do {
+        //     sum = +prompt('Сколько это будет стоить? (рублей)');
+        // } while (!isNumber(sum));
+
+
+    }
+    return sum;
+};
+
+const getTitle = function () {
+    return title.trim()[0].toUpperCase() + title.trim().substring(1).toLowerCase();
+};
 
 const getRollbackMessage = function (price) {
     if (price >= 30000) {
@@ -47,17 +63,28 @@ const getRollbackMessage = function (price) {
 const getServicePercentPrices = function () {
     return fullPrice - (fullPrice * (rollback / 100));
 };
-servicePercentPrice = getServicePercentPrices();
+
+function getFullPrice() {
+    return parseInt(screenPrice) + allServicePrices;
+}
 
 const showTypeOf = function (variable) {
     console.log(variable, typeof variable);
 };
 
 
+asking();
+allServicePrices = getAllServicePrices();
+fullPrice = getFullPrice();
+servicePercentPrice = getServicePercentPrices();
+title = getTitle();
+
+
 showTypeOf(title);
 showTypeOf(screenPrice);
 showTypeOf(adaptive);
 
+console.log();
 console.log(getRollbackMessage(fullPrice));
 console.log(typeof title);
 console.log(typeof screenPrice);
