@@ -64,7 +64,7 @@ const getServicePercentPrices = function () {
 };
 
 function getFullPrice() {
-    return parseInt(screenPrice) + allServicePrices;
+    return parseInt(screenPrice) + parseInt(allServicePrices);
 }
 
 const showTypeOf = function (variable) {
@@ -80,7 +80,7 @@ title = getTitle();
 
 
 showTypeOf(title);
-showTypeOf(screenPrice);
+showTypeOf(parseInt(screenPrice));
 showTypeOf(adaptive);
 
 console.log();
