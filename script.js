@@ -85,9 +85,6 @@ showTypeOf(adaptive);
 
 console.log();
 console.log(getRollbackMessage(fullPrice));
-console.log(typeof title);
-console.log(typeof screenPrice);
-console.log(typeof adaptive);
 console.log(screens.length);
 console.log(servicePercentPrice);
 
