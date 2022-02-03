@@ -83,10 +83,8 @@ showTypeOf(title);
 showTypeOf(parseInt(screenPrice));
 showTypeOf(adaptive);
 
-console.log();
 console.log(getRollbackMessage(fullPrice));
 console.log(screens.length);
 console.log(servicePercentPrice);
-
 console.log('Стоимость верстки экранов ' + screenPrice + ' рублей');
 console.log('Стоимость разработки сайта ' + fullPrice + ' рублей');
