@@ -10,9 +10,12 @@ let servicePercentPrice;
 let allServicePrices;
 
 const isNumber = function (num) {
-    return !isNaN(parseFloat(num) && isFinite(num));
+    let res;
+    if (num != null) {
+        res = !isNaN(parseFloat(num) && isFinite(num));
+    }
+    return res;
 };
-
 
 const asking = function () {
     title = prompt('Как называется ваш проект?');
@@ -24,7 +27,6 @@ const asking = function () {
 
     adaptive = confirm('Нужен ли адаптив на сайте?');
 };
-
 
 const getAllServicePrices = function () {
     let sum = 0;
@@ -71,19 +73,16 @@ const showTypeOf = function (variable) {
     console.log(variable, typeof variable);
 };
 
-
 asking();
 allServicePrices = getAllServicePrices();
 fullPrice = getFullPrice();
 servicePercentPrice = getServicePercentPrices();
 title = getTitle();
 
-
 showTypeOf(title);
-showTypeOf(screenPrice);
+showTypeOf(parseInt(screenPrice));
 showTypeOf(adaptive);
 
-console.log();
 console.log(getRollbackMessage(fullPrice));
 console.log(typeof title);
 console.log(typeof screenPrice);
