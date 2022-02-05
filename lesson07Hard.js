@@ -3,11 +3,14 @@ const day = new Date();
 let today = day.getDay() - 1;
 for (let i = 0; i < week.length; i++) {
     if (i === today) {
-        document.body.insertAdjacentHTML('beforeend', '<b>' + week[i] + '</b>' + ' ');
+        if (i > 4) {
+            document.body.insertAdjacentHTML('beforeend', '<i><b>' + week[i] + '</b></i>' + '<br>');
+        } else {
+            document.body.insertAdjacentHTML('beforeend', '<b>' + week[i] + '</b>' + '<br>');
+        }
     } else if (i > 4) {
-        document.body.insertAdjacentHTML('beforeend', '<i>' + week[i] + '</i>' + ' ');
+        document.body.insertAdjacentHTML('beforeend', '<i>' + week[i] + '</i>' + '<br>');
     } else {
-        document.body.insertAdjacentHTML('beforeend', '<div>' + week[i] + '</div>' + ' ');
+        document.body.insertAdjacentHTML('beforeend', '<span>' + week[i] + '</span>' + '<br>');
     }
-
 }
