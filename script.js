@@ -13,10 +13,10 @@ const appData = {
 
     start: function () {
         appData.asking();
-        appData.allServicePrices = this.getAllServicePrices();
-        appData.fullPrice = this.getFullPrice();
-        appData.servicePercentPrice = this.getServicePercentPrices();
-        appData.title = this.getTitle();
+        appData.allServicePrices = appData.getAllServicePrices();
+        appData.fullPrice = appData.getFullPrice();
+        appData.servicePercentPrice = appData.getServicePercentPrices();
+        appData.title = appData.getTitle();
         appData.logger();
     },
     logger: function () {
@@ -31,7 +31,7 @@ const appData = {
 
         do {
             appData.screenPrice = prompt('Сколько будет стоить данная работа? (рублей)', '1000');
-        } while (!this.isNumber(appData.screenPrice));
+        } while (!appData.isNumber(appData.screenPrice));
 
         appData.adaptive = confirm('Нужен ли адаптив на сайте?');
     },
@@ -51,7 +51,7 @@ const appData = {
             }
             do {
                 res = prompt('Сколько это будет стоить? (рублей)');
-            } while (!this.isNumber(res));
+            } while (!appData.isNumber(res));
             sum += +res;
         }
         return sum;
