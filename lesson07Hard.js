@@ -1,8 +1,11 @@
 const week = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
 const day = new Date();
 let today = day.getDay() - 1;
+if (today == -1) {
+    today = 6;
+}
 for (let i = 0; i < week.length; i++) {
-    if (i === today) {
+    if (i == today) {
         if (i > 4) {
             document.body.insertAdjacentHTML('beforeend', '<i><b>' + week[i] + '</b></i>' + '<br>');
         } else {
