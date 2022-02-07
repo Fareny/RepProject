@@ -18,12 +18,7 @@ const appData = {
         appData.logger();
     },
 
-    checkingString: function (str) {
-        return typeof str === "string" || str instanceof String;
-    },
-
     asking: function () {
-        // appData.title = prompt('Как называется ваш проект?', 'КаЛькУлЯтОр');
         do {
             appData.title = prompt('Как называется ваш проект?', 'КаЛькУлЯтОр');
         } while (appData.isNumber(appData.title));
@@ -53,9 +48,7 @@ const appData = {
             do {
                 price = prompt('Сколько это будет стоить? (рублей)');
             } while (!appData.isNumber(price));
-
-            appData.services.name = +price;
-
+            appData.services[name + i] = +price;
         }
 
         appData.adaptive = confirm('Нужен ли адаптив на сайте?');
