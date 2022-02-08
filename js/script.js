@@ -25,8 +25,6 @@ const element1 = document.querySelector('.rollback').querySelector('span.range-v
 console.log(element1);
 
 
-
-
 const inputs = document.getElementsByClassName('total-input');
 for (let i = 0; i < inputs.length; i++) {
     console.log(inputs[i]);
@@ -37,6 +35,8 @@ screen1.forEach(function (item) {
     screens1 = item;
 });
 console.log(screens1);
+
+
 
 const appData = {
     title: '',
