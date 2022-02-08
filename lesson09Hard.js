@@ -33,7 +33,6 @@ const number = (num, tit) => {
 };
 document.body.insertAdjacentHTML('beforeend', '<b>' + returnTime() + '</b>' + '<br>');
 
-
 // let res;
 // function result() {
 //     let fullDate2 = returnZero(date.getDate()) + '.' + returnZero(date.getMonth() + 1) + '.' + date.getFullYear();
@@ -43,6 +42,7 @@ document.body.insertAdjacentHTML('beforeend', '<b>' + returnTime() + '</b>' + '<
 // function returnZero(num) {
 //     return num <= 9 ? '0' + num : num;
 // }
+
 let fullDate2 = returnZero(date.getDate()) + '.' + returnZero(date.getMonth() + 1) + '.' + date.getFullYear();
 let time2 = returnZero(date.getHours()) + ':' + returnZero(date.getMinutes()) + ':' + returnZero(date.getSeconds());
 
