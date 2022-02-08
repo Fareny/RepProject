@@ -18,7 +18,7 @@ function returnTime(date) {
         second = date.getSeconds(),
         second1 = number(second, seconds);
 
-    let date1 = 'Сегодня ' + day + ', ' + date.getDay() + ' ' + month + ' ' + date.getFullYear() + ' года' + ', ';
+    let date1 = 'Сегодня ' + day + ', ' + date.getDate() + ' ' + month + ' ' + date.getFullYear() + ' года' + ', ';
     let date2 = hour + ' ' + hour1 + ' ' + minute + ' ' + minute1 + ' ' + second + ' ' + second1;
     return date1 + date2;
 }
