@@ -7,19 +7,19 @@ function returnTime(date) {
         month = months[date.getMonth()];
 
     const hours = ['час', 'часа', 'часов'],
-        hour = date.getHours(),
-        hour1 = number(hour, hours);
+        getHour = date.getHours(),
+        hour = number(getHour, hours);
 
     const minutes = ['минута', 'минуты', 'минут'],
-        minute = date.getMinutes(),
-        minute1 = number(minute, minutes);
+        getMinute = date.getMinutes(),
+        minute = number(getMinute, minutes);
 
     const seconds = ['секунда', 'секунды', 'секунд'],
-        second = date.getSeconds(),
-        second1 = number(second, seconds);
+        getSecond = date.getSeconds(),
+        second = number(getSecond, seconds);
 
     let date1 = 'Сегодня ' + day + ', ' + date.getDate() + ' ' + month + ' ' + date.getFullYear() + ' года' + ', ';
-    let date2 = hour + ' ' + hour1 + ' ' + minute + ' ' + minute1 + ' ' + second + ' ' + second1;
+    let date2 = getHour + ' ' + hour + ' ' + getMinute + ' ' + minute + ' ' + getSecond + ' ' + second;
     return date1 + date2;
 }
 
@@ -34,8 +34,8 @@ function returnZero(num) {
 setInterval(function () {
     let date = new Date();
 
-    let fullDate2 = returnZero(date.getDate()) + '.' + returnZero(date.getMonth() + 1) + '.' + date.getFullYear();
-    let time2 = returnZero(date.getHours()) + ':' + returnZero(date.getMinutes()) + ':' + returnZero(date.getSeconds());
-    let dateText = '<b>' + returnTime(date) + '</b>' + '<br>' + '<b>' + fullDate2 + ' ' + time2 + '</b>';
+    let fullDate = returnZero(date.getDate()) + '.' + returnZero(date.getMonth() + 1) + '.' + date.getFullYear();
+    let time = returnZero(date.getHours()) + ':' + returnZero(date.getMinutes()) + ':' + returnZero(date.getSeconds());
+    let dateText = '<b>' + returnTime(date) + '</b>' + '<br>' + '<b>' + fullDate + ' ' + time + '</b>';
     document.body.innerHTML = dateText;
 }, 1000);
