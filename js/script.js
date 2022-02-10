@@ -7,7 +7,6 @@ console.log(buttons);
 const plus = document.querySelector('.screen-btn');
 console.log(plus);
 
-
 const selector = document.querySelectorAll('.other-items');
 console.log(selector);
 
@@ -17,24 +16,22 @@ const percent = document.querySelectorAll('.other-items.percent');
 console.log(number);
 console.log(percent);
 
+const range = document.querySelector('.rollback').querySelector('input[type="range"]');
+console.log(range);
 
-const element = document.querySelector('.rollback').querySelector('input[type="range"]');
-console.log(element);
-
-const element1 = document.querySelector('.rollback').querySelector('span.range-value');
-console.log(element1);
-
+const spanValue = document.querySelector('.rollback').querySelector('span.range-value');
+console.log(spanValue);
 
 const inputs = document.getElementsByClassName('total-input');
 for (let i = 0; i < inputs.length; i++) {
     console.log(inputs[i]);
 }
-let screens1;
-const screen1 = document.querySelectorAll('.screen');
-screen1.forEach(function (item) {
-    screens1 = item;
+let screens;
+const screenItem = document.querySelectorAll('.screen');
+screenItem.forEach(function (item) {
+    screens = item;
 });
-console.log(screens1);
+console.log(screens);
 
 
 
