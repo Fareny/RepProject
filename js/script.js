@@ -149,10 +149,3 @@ const appData = {
 appData.init();
 
 
-
-// function rangeEvent(event) {
-//     span.textContent = event.target.value;
-// }
-// control.addEventListener('input', rangeEvent);
-// control.addEventListener('change', rangeEvent);
-
