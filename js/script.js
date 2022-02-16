@@ -48,7 +48,6 @@ const appData = {
         buttonReset.addEventListener('click', this.clear);
         buttonPlus.addEventListener('click', this.addScreenBlock);
         range.addEventListener('input', this.rangeEvent);
-        range.addEventListener('change', this.showRange);
     },
 
     addTitle: function () {
@@ -156,6 +155,7 @@ const appData = {
             item.querySelector('.main-controls__input input').disabled = true;
             item.querySelector('.main-controls__select select').disabled = true;
         });
+        document.querySelector('.screen-btn').disabled = true;
     },
 
     clear: function () {
@@ -190,6 +190,7 @@ const appData = {
             item.querySelector('input').value = '';
             item.querySelector('select').value = '';
         });
+        document.querySelector('.screen-btn').disabled = false;
 
         let itemScreen = document.querySelectorAll('.main-controls__views.element .main-controls__item.screen');
         itemScreen.forEach((item, index) => {
@@ -198,10 +199,9 @@ const appData = {
             }
         });
 
-        elements.forEach(function (item, index) {
+        elements.forEach((item, index) => {
             item.checked = false;
         });
-
         cms.checked = false;
 
     },
